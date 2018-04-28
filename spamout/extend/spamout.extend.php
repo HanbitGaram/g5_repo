@@ -37,7 +37,7 @@
 	$Akismet['test'] = true; // TRUE로 설정하면 테스트 모드, FALSE 로 설정하면 실제 탐지 모드
 
 	$spmChk = new spamOut($Akismet['key'], $Akismet['url']);
-	$isSpam = $spmChk->checkComment($Akismet['wr_name'], $Akismet['content'], '', $Akismet['test']);
+	$isSpam = $spmChk->checkComment($Akismet['wr_name'], $Akismet['content'], $is_admin, $Akismet['test']);
 	if($isSpam==true){
 		alert("해당 댓글을 등록할 수 없습니다.\\n스팸필터에 의하여 댓글이 스팸으로 판단되었습니다.");
 	}
